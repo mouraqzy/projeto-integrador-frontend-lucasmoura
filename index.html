@@ -7,44 +7,90 @@
 </head>
 <body>
 
-    <h1>Portfólio Pessoal - Lucas Moura</h1>
-    <p>Site para apresentar minhas informações profissionais, projetos e formas de contato.</p>
+    <header>
+        <h1>Portfólio Pessoal - Lucas Moura</h1>
+        <p>Site para apresentar minhas informações profissionais, projetos e formas de contato.</p>
+    </header>
 
-    <h2>Principais habilidades</h2>
-    <ul>
-        <li>HTML e CSS</li>
-        <li>JavaScript</li>
-        <li>Controle de versão com Git e GitHub</li>
-    </ul>
+    <main>
 
-    <h2>Projetos</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Projeto</th>
-                <th>Tecnologia</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Portfólio Pessoal</td>
-                <td>HTML, CSS, JS</td>
-            </tr>
-            <tr>
-                <td>Projeto Integrador</td>
-                <td>Front-end para Web</td>
-            </tr>
-        </tbody>
-    </table>
+        <section>
+            <h2>Principais habilidades</h2>
+            <ul>
+                <li>HTML e CSS</li>
+                <li>JavaScript</li>
+                <li>Controle de versão com Git e GitHub</li>
+            </ul>
+        </section>
 
-    <h2>Saiba mais</h2>
-    <p>
-        <a href="https://www.linkedin.com/in/lucas-moura-a081843b4" target="_blank" rel="noopener noreferrer">
-            LinkedIn
-        </a>
-    </p>
+        <section>
+            <h2>Projetos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Projeto</th>
+                        <th>Tecnologia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Portfólio Pessoal</td>
+                        <td>HTML, CSS, JS</td>
+                    </tr>
+                    <tr>
+                        <td>Projeto Integrador</td>
+                        <td>Front-end para Web</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-    <img src="assets/images/foto-perfil.jpg" alt="Foto de perfil de Lucas Moura, fundo neutro">
+        <section>
+            <h2>Saiba mais</h2>
+            <p>
+                <a href="https://www.linkedin.com/in/lucas-moura-a081843b4" target="_blank" rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+            </p>
+            <img src="assets/images/foto-perfil.jpg" alt="Foto de perfil de Lucas Moura, fundo neutro">
+        </section>
+
+        <section>
+            <h2>Contato</h2>
+            <form>
+                <fieldset>
+                    <legend>Formulário de contato</legend>
+
+                    <div>
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" required minlength="3">
+                    </div>
+
+                    <div>
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div>
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" pattern="[0-9]{10,11}">
+                    </div>
+
+                    <div>
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem"></textarea>
+                    </div>
+
+                    <button type="submit">Enviar</button>
+                </fieldset>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Lucas Moura. Todos os direitos reservados.</p>
+    </footer>
 
 </body>
 </html>
