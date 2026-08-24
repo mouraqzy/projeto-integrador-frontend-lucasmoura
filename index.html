@@ -57,10 +57,21 @@
        
         <section>
         <h2>Aplicação mais recente: </h2>
+
         <div class="video-container">
-            <video width="560" height="315" controls preload="metadata" poster="assets/images/poster-apresentacao.jpg">
-                <source src="assets/videos/apresentacao.mp4" type="video/mp4">
-                Seu navegador não suporta a reprodução de vídeo.
+
+                        <!--
+                preload="metadata" foi escolhido porque o vídeo não precisa
+                ser carregado completamente antes da interação do usuário.
+                Dessa forma, apenas os metadados são carregados inicialmente.
+-->
+        <video width="560" height="315" controls preload="metadata" poster="assets/images/poster-apresentacao.jpg">
+        
+            <source src="assets/videos/apresentacao.webm" type="video/webm">
+            <source src="assets/videos/apresentacao.mp4" type="video/mp4">
+
+            Seu navegador não suporta a reprodução de vídeo.
+
             </video>
         </div>
 </section>
