@@ -248,3 +248,82 @@ footer p {
   margin: 0;
   font-size: 0.875rem;
 }
+/* 13. Navbar (Flexbox) */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.75rem;
+  margin: var(--espaco) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar a,
+.navbar a:visited {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--raio);
+}
+
+
+.navbar a:hover,
+.navbar a:focus-visible {
+  color: #000000;
+  background-color: var(--cor-destaque);
+}
+
+.navbar a:focus-visible {
+  outline: 0.15rem solid #ffffff;
+  outline-offset: 0.15rem;
+}
+
+/* 14. Grade de projetos (Grid) */
+.grade-projetos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--espaco);
+}
+
+.projeto {
+  padding: 1.25rem;
+  background-color: var(--cor-superficie-alta);
+  border: var(--borda);
+  border-radius: var(--raio);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.projeto h3 {
+  margin: 0 0 0.5rem;
+}
+
+.projeto p {
+  margin: 0;
+}
+
+.projeto:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 0.5rem 1rem rgba(109, 40, 217, 0.4);
+}
+/* 15. Pseudo-classes estruturais */
+.projeto:first-child {
+  border-color: var(--cor-destaque);   /* projeto principal em destaque */
+}
+
+.projeto:nth-child(even) {
+  background-color: var(--cor-superficie);   /* alterna o tom dos cards */
+}
+
+.navbar li:last-child a {
+  border: 0.1rem solid var(--cor-destaque);  /* "Contato" vira botão */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projeto {
+    transition: none;
+  }
+}
