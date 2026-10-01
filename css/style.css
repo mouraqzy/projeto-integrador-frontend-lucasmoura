@@ -1,0 +1,250 @@
+/* style.css — Portfólio Pessoal · Lucas Moura*/
+
+/* 1. Variáveis*/
+:root {
+  --cor-fundo: #000000;          /* fundo */
+  --cor-superficie: #0a0a0a;     /* cards e outras partes */
+  --cor-superficie-alta: #17102b;/* chips e campos */
+  --cor-borda: #4c1d95;
+  --cor-texto: #ece6ff;
+  --cor-violeta: #6d28d9;        /* cabeçalho, tabela, hover */
+  --cor-destaque: #e8a317;       /* dourado: barras, bordas e botão */
+  --cor-claro: #c4b5fd;          /* roxo claro: títulos e links */
+  --cor-link-visitado: #f0abfc;
+  --espaco: 1rem;
+  --raio: 0.75rem;
+  --borda: 1px solid var(--cor-borda);
+  color-scheme: dark;            
+}
+
+/* 2. Base  */
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+}
+
+
+h1,
+h2,
+h3 {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+h2,
+h3 {
+  color: var(--cor-claro);
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 0 0 var(--espaco);
+}
+
+a:link {
+  color: var(--cor-claro);
+}
+a:visited {
+  color: var(--cor-link-visitado);
+}
+a:hover {
+  color: #ffffff;
+  background-color: var(--cor-violeta);
+}
+a:active {
+  color: var(--cor-destaque);
+}
+
+
+header {
+  background-color: var(--cor-violeta);
+  border-bottom: 0.2rem solid var(--cor-destaque);
+  padding: calc(var(--espaco) * 3) calc(var(--espaco) * 2);
+}
+
+
+#titulo-principal {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin: 0 0 0.75rem;
+}
+
+header p {
+  max-width: 60ch;
+  margin: 0;
+}
+
+/*  5. Layout principal  */
+main {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: calc(var(--espaco) * 2.5) var(--espaco);
+}
+
+/* 6. Card  */
+.card {
+  background-color: var(--cor-superficie);
+  padding: 1.5rem;                                   /* espaço interno */
+  border: var(--borda);                              /* borda */
+  border-left: 0.3rem solid var(--cor-destaque);     /* barra dourada à esquerda */
+  border-radius: var(--raio);
+  margin: 0 0 calc(var(--espaco) * 2);               /* espaço externo entre cards */
+}
+
+.card > h2 {
+  margin-top: 0;
+}
+
+.destaque {
+  font-weight: 700;
+}
+
+/* 7. Lista de linguagens */
+.lista-linguagens {
+  display: flex;           /* horizontal */
+  flex-wrap: wrap;         
+  gap: 0.75rem;            /* espaço entre os cardzinhos */
+  margin: 0;
+  padding: 0;
+  list-style-type: none;   
+}
+
+.linguagem {
+  display: flex;           
+  align-items: center;
+  margin: 0;
+  padding: 0.5rem 1rem 0.5rem 0.75rem;
+  background-color: var(--cor-superficie-alta);
+  border: var(--borda);
+  border-radius: 2rem;
+  font-weight: 600;
+}
+
+.icone {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-right: 0.5rem;
+}
+
+/* 8. Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--cor-superficie);
+}
+
+th,
+td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border: var(--borda);
+}
+
+thead th {
+  background-color: var(--cor-violeta);
+  color: #ffffff;
+}
+
+/*9. Foto de perfil e desafio */
+.foto-perfil {
+  width: 12rem;
+  aspect-ratio: 1 / 1;
+  object-fit: cover; 
+  border: 0.2rem solid var(--cor-destaque);
+  border-radius: var(--raio);
+  margin-top: var(--espaco);
+}
+
+/*10. Vídeo */
+video {
+  width: 100%;
+  max-width: 35rem;
+  height: auto;
+  border: var(--borda);
+  border-radius: var(--raio);
+  background-color: #000000;
+}
+
+/* 11. Formulário*/
+fieldset {
+  border: var(--borda);
+  border-radius: var(--raio);
+  padding: 1.25rem;
+}
+
+legend {
+  font-weight: 700;
+  color: var(--cor-claro);
+  padding: 0 0.5rem;
+}
+
+fieldset > div {
+  margin-bottom: var(--espaco);
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  max-width: 32rem;
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+  color: var(--cor-texto);
+  background-color: var(--cor-superficie-alta);
+  border: var(--borda);
+  border-radius: var(--raio);
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: 0.15rem solid var(--cor-destaque);
+  border-color: var(--cor-destaque);
+}
+
+textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+.botao {
+  font: inherit;
+  font-weight: 700;
+  color: #000000;
+  background-color: var(--cor-destaque);
+  padding: 0.7rem 1.5rem;
+  border: 0.15rem solid var(--cor-violeta);
+  border-radius: var(--raio);
+  cursor: pointer;
+}
+.botao:hover {
+  color: #ffffff;
+  background-color: var(--cor-violeta);
+}
+
+/* 12. Rodapé */
+footer {
+  background-color: var(--cor-superficie);
+  border-top: var(--borda);
+  color: var(--cor-claro);
+  text-align: center;
+  padding: var(--espaco);
+}
+footer p {
+  margin: 0;
+  font-size: 0.875rem;
+}

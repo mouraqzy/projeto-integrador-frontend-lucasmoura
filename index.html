@@ -4,26 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio Pessoal - Lucas Moura</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <header>
-        <h1>Portfólio Pessoal - Lucas Moura</h1>
-        <p>Site para apresentar minhas informações profissionais, projetos e formas de contato.</p>
+        <h1 id="titulo-principal">Portfólio Pessoal - Lucas Moura</h1>
+        <p class="destaque">Site para apresentar minhas informações profissionais, projetos e formas de contato.</p>
     </header>
 
     <main>
+          
+        <section class="card">
+            <h2>Sobre mim</h2>
+            <p class="destaque">Olá, me chamo Lucas Moura!</p>
+            <p>
+                Sou estudante e estou aprendendo desenvolvimento front-end para web.
+                Este portfólio é o meu projeto integrador, que vou evoluindo a cada aula.
+            </p>
+            <p>
+                Já trabalho com Python, SQL, JavaScript, CSS e HTML, e uso Git e GitHub
+                para versionar meus projetos. Aqui você encontra minhas habilidades,
+                os projetos que desenvolvi e as formas de entrar em contato comigo.
+            </p>
+             <img class="foto-perfil" src="assets/images/foto-perfil.jpg" alt="Foto de perfil de Lucas Moura, fundo neutro">
+        </section>
 
-        <section>
+
+        <section class="card">
             <h2>Principais habilidades</h2>
-            <ul>
-                <li>HTML e CSS</li>
-                <li>JavaScript</li>
-                <li>Controle de versão com Git e GitHub</li>
+            <ul class="lista-linguagens">
+                <li class="linguagem"><img class="icone" src="assets/images/linguagens/python.svg" alt="">Python</li>
+                <li class="linguagem"><img class="icone" src="assets/images/linguagens/sql.svg" alt="">SQL</li>
+                <li class="linguagem"><img class="icone" src="assets/images/linguagens/javascript.svg" alt="">JavaScript</li>
+                <li class="linguagem"><img class="icone" src="assets/images/linguagens/css.svg" alt="">CSS</li>
+                <li class="linguagem"><img class="icone" src="assets/images/linguagens/html.svg" alt="">HTML</li>
+                <li class="linguagem"><img class="icone" src="assets/images/linguagens/git.svg" alt="">Git e GitHub</li>
             </ul>
         </section>
 
-        <section>
+        <section class="card">
             <h2>Projetos</h2>
             <table>
                 <thead>
@@ -38,46 +59,61 @@
                         <td>HTML, CSS, JS</td>
                     </tr>
                     <tr>
-                        <td>Projeto Integrador</td>
-                        <td>Front-end para Web</td>
+                        <td>Projeto Quadro 616</td>
+                        <td>HTML, CSS, JS</td>
                     </tr>
+                     <tr>
+                        <td>Projeto Quiz FLA</td>
+                        <td>HTML, CSS, JS</td>
+                    </tr>
+
+                     <tr>
+                        <td>Projeto Cassino Casa Blanca</td>
+                        <td>Python</td>
+                    </tr>
+
                 </tbody>
             </table>
         </section>
 
-        <section>
+        
+        <section class="card">
+            <h2>Aplicação mais recente: </h2>
+
+            <div class="video-container">
+
+                
+                <video width="560" height="315" controls preload="metadata" poster="assets/images/poster-apresentacao.png">
+
+                    <source src="assets/videos/apresentacao.webm" type="video/webm">
+                    <source src="assets/videos/apresentacao.mp4" type="video/mp4">
+
+                    Seu navegador não suporta a reprodução de vídeo.
+
+                </video>
+            </div>
+        </section>
+        
+        <section class="card">
             <h2>Saiba mais</h2>
             <p>
                 <a href="https://www.linkedin.com/in/lucas-moura-a081843b4" target="_blank" rel="noopener noreferrer">
                     LinkedIn
+                </a> 
+            </p>
+            
+            <p>
+                <a href="https://github.com/mouraqzy?tab=repositories" target="_blank" rel="noopener noreferrer">
+                    GitHub  
                 </a>
             </p>
-            <img src="assets/images/foto-perfil.jpg" alt="Foto de perfil de Lucas Moura, fundo neutro">
+
+           
         </section>
-       
-        <section>
-        <h2>Aplicação mais recente: </h2>
-
-        <div class="video-container">
-
-                        <!--
-                preload="metadata" foi escolhido porque o vídeo não precisa
-                ser carregado completamente antes da interação do usuário.
-                Dessa forma, apenas os metadados são carregados inicialmente.
--->
-        <video width="560" height="315" controls preload="metadata" poster="assets/images/poster-apresentacao.jpg">
-        
-            <source src="assets/videos/apresentacao.webm" type="video/webm">
-            <source src="assets/videos/apresentacao.mp4" type="video/mp4">
-
-            Seu navegador não suporta a reprodução de vídeo.
-
-            </video>
-        </div>
-</section>
 
 
-        <section>
+
+        <section class="card">
             <h2>Contato</h2>
             <form>
                 <fieldset>
@@ -103,7 +139,7 @@
                         <textarea id="mensagem" name="mensagem"></textarea>
                     </div>
 
-                    <button type="submit">Enviar</button>
+                    <button class="botao" type="submit">Enviar</button>
                 </fieldset>
             </form>
         </section>
