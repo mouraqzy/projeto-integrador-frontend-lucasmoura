@@ -12,6 +12,13 @@
     <header>
         <h1 id="titulo-principal">Portfólio Pessoal - Lucas Moura</h1>
         <p class="destaque">Site para apresentar minhas informações profissionais, projetos e formas de contato.</p>
+        <nav aria-label="Navegação principal">
+        <ul class="navbar">
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+    </ul>
+</nav>
     </header>
 
     <main>
@@ -32,7 +39,7 @@
         </section>
 
 
-        <section class="card">
+        <section class="card" id="habilidades">
             <h2>Principais habilidades</h2>
             <ul class="lista-linguagens">
                 <li class="linguagem"><img class="icone" src="assets/images/linguagens/python.svg" alt="">Python</li>
@@ -44,36 +51,27 @@
             </ul>
         </section>
 
-        <section class="card">
+        <section class="card" id="projetos">
             <h2>Projetos</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Projeto</th>
-                        <th>Tecnologia</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Portfólio Pessoal</td>
-                        <td>HTML, CSS, JS</td>
-                    </tr>
-                    <tr>
-                        <td>Projeto Quadro 616</td>
-                        <td>HTML, CSS, JS</td>
-                    </tr>
-                     <tr>
-                        <td>Projeto Quiz FLA</td>
-                        <td>HTML, CSS, JS</td>
-                    </tr>
-
-                     <tr>
-                        <td>Projeto Cassino Casa Blanca</td>
-                        <td>Python</td>
-                    </tr>
-
-                </tbody>
-            </table>
+                
+            <div class="grade-projetos">
+                 <article class="projeto">
+                 <h3>Portfólio Pessoal</h3>
+                 <p>HTML, CSS, JS</p>
+                </article>
+            <article class="projeto">
+                    <h3>Projeto Quadro 616</h3>
+                    <p>HTML, CSS, JS</p>
+            </article>
+            <article class="projeto">
+                    <h3>Projeto Quiz FLA</h3>
+                    <p>HTML, CSS, JS</p>
+            </article>
+            <article class="projeto">
+                    <h3>Projeto Cassino Casa Blanca</h3>
+                    <p>Python</p>
+            </article>
+    </div>
         </section>
 
         
@@ -113,7 +111,7 @@
 
 
 
-        <section class="card">
+        <section class="card" id="contato">
             <h2>Contato</h2>
             <form>
                 <fieldset>
