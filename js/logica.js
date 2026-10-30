@@ -19,19 +19,19 @@
  * Teste de mesa (minimo = 20), tres primeiras voltas do for...of:
  *   volta | projeto            | horas | faixa  | totalHoras | acimaDoMinimo | maisHoras
  *   ------+--------------------+-------+--------+------------+---------------+----------
- *     1   | Portfolio Pessoal  |  250   | grande |     250    |       1       | Portfolio
- *     2   | Quadro 616         |  25   | grande |     275    |       2       | Portfolio
- *     3   | Quiz FLA           |  18   | medio  |     293    |       2       | Portfolio
+ *     1   | Portfolio Pessoal  |  80 | grande |     80     |       1       | Portfolio
+ *     2   | Quadro 616         |  25   | grande |    105     |       2       | Portfolio
+ *     3   | Quiz FLA           |  18   | medio  |    123     |       2       | Portfolio
  */
 
 // Dados do tema (troque as horas pelos valores reais dos seus projetos).
 // Nomes das propriedades em camelCase e sem acento.
 const listaProjetos = [
-  { nome: "Portfolio Pessoal", horas: 250, categoria: "web" },
-  { nome: "Quadro 616", horas: 25, categoria: "web" },
-  { nome: "Quiz FLA", horas: 18, categoria: "web" },
-  { nome: "Cassino Casa Blanca", horas: 12, categoria: "python" },
-  { nome: "Gerenciador de Campeonato", horas: 8, categoria: "c" },
+  { nome: "Portfolio Pessoal", horas: 80, ano: 2026, categoria: "web" },
+  { nome: "Quadro 616", horas: 25, ano: 2026, categoria: "web" },
+  { nome: "Quiz FLA", horas: 18, ano: 2026, categoria: "web" },
+  { nome: "Cassino Casa Blanca", horas: 12, ano: 2026, categoria: "python" },
+  { nome: "Gerenciador de Campeonato", horas: 8, ano: 2026, categoria: "c" },
 ];
 
 // Pede o minimo de horas e valida: Cancelar (null), vazio, texto e faixa.
