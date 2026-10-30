@@ -14,14 +14,14 @@
  */
 
 const projetos = [
-  { nome: "Portfolio Pessoal", horas: 30, ano: 2026 },
+  { nome: "Portfolio Pessoal", horas: 80, ano: 2026 },
   { nome: "Quadro 616", horas: 25, ano: 2026 },
-  { nome: "Quiz FLA", horas: 18, ano: 2025 },
-  { nome: "Cassino Casa Blanca", horas: 12, ano: 2025 },
+  { nome: "Quiz FLA", horas: 18, ano: 2026 },
+  { nome: "Cassino Casa Blanca", horas: 12, ano: 2026 },
   { nome: "Gerenciador de Campeonato", horas: 8, ano: 2026 },
 ];
 
-const rotulos = { rapido: "Rapido", medio: "Medio", longo: "Longo" };
+const rotulos = { rapido: "Rápido", medio: "Médio", longo: "Longo" };
 
 /* ---------- Funcoes que calculam (nao mexem na pagina) ---------- */
 
@@ -53,7 +53,7 @@ function analisarProjetos(lista, horasPorSemana) {
 function montarResumo(lista) {
   const totalHoras = lista.reduce((soma, projeto) => soma + projeto.horas, 0);
   const longos = lista.filter((projeto) => projeto.faixa === "longo");
-  return `${lista.length} projetos, ${totalHoras} horas no total, ${longos.length} de esforco longo.`;
+  return `${lista.length} projetos, ${totalHoras} horas no total, ${longos.length} de esforço longo.`;
 }
 
 /* ---------- Funcoes que MEXEM NA PAGINA ---------- */
@@ -67,7 +67,7 @@ function criarElementoProjeto(item) {
   titulo.textContent = item.nome;
 
   const detalhe = document.createElement("p");
-  detalhe.textContent = `${item.horas} h · ${item.semanas} semana(s) · esforco ${rotulos[item.faixa]}`;
+  detalhe.textContent = `${item.horas} h · ${item.semanas} semana(s) · esforço ${rotulos[item.faixa]}`;
 
   artigo.append(titulo, detalhe);
   return artigo;
