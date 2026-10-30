@@ -19,6 +19,8 @@
 
 /* 2. Base  */
 
+/* rem em vez de px: o tamanho escala com a fonte configurada no navegador,
+   o que ajuda quem precisa de texto maior. Com px ficaria fixo. */
 html {
   font-size: 100%;
 }
@@ -99,6 +101,9 @@ main {
   border-radius: var(--raio);
   margin: 0 0 calc(var(--espaco) * 2);               /* espaço externo entre cards */
 }
+
+/* Combinador filho direto (>): só o h2 que é filho direto do card é ajustado,
+   sem afetar títulos de componentes aninhados. */
 
 .card > h2 {
   margin-top: 0;
@@ -187,6 +192,8 @@ legend {
   padding: 0 0.5rem;
 }
 
+/* Combinador filho direto (>): só as divs de campo do formulário ganham
+   espaçamento, não divs internas de outros elementos. */
 fieldset > div {
   margin-bottom: var(--espaco);
 }
@@ -297,6 +304,7 @@ footer p {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Combinador descendente: qualquer h3 dentro de um .projeto, em qualquer nível. */
 .projeto h3 {
   margin: 0 0 0.5rem;
 }
@@ -305,6 +313,9 @@ footer p {
   margin: 0;
 }
 
+/* transform em vez de width/height: não recalcula o layout da página (sem reflow),
+   então a animação fica mais leve e não empurra os vizinhos. */
+   
 .projeto:hover {
   transform: translateY(-4px) scale(1.02);
   box-shadow: 0 0.5rem 1rem rgba(109, 40, 217, 0.4);
