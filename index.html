@@ -80,7 +80,9 @@
 
             <div class="video-container">
 
-                
+                <!-- preload="metadata": o vídeo está abaixo da dobra, então baixa só duração e
+                dimensões (rápido e economiza dados); o arquivo completo só vem ao dar play.
+                "none" não mostraria a duração e "auto" baixaria tudo sem necessidade. -->
                 <video width="560" height="315" controls preload="metadata" poster="assets/images/poster-apresentacao.png">
 
                     <source src="assets/videos/apresentacao.webm" type="video/webm">
