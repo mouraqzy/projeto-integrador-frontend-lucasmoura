@@ -11,6 +11,9 @@
   --cor-destaque: #e8a317;       /* dourado: barras, bordas e botão */
   --cor-claro: #c4b5fd;          /* roxo claro: títulos e links */
   --cor-link-visitado: #f0abfc;
+  --cor-faixa-rapido: #4ade80;
+  --cor-faixa-medio: #e8a317;
+  --cor-faixa-longo: #f87171;
   --espaco: 1rem;
   --raio: 0.75rem;
   --borda: 1px solid var(--cor-borda);
@@ -337,4 +340,13 @@ footer p {
   .projeto {
     transition: none;
   }
+}
+/* 16. Faixas de esforço (Aula 11): o JS decide QUANDO a classe vale;
+   o CSS decide COMO ela parece. */
+.projeto.faixa-rapido { border-left: 0.3rem solid var(--cor-faixa-rapido); }
+.projeto.faixa-medio  { border-left: 0.3rem solid var(--cor-faixa-medio); }
+.projeto.faixa-longo  { border-left: 0.3rem solid var(--cor-faixa-longo); }
+
+.resumo {
+  margin: var(--espaco) 0 0;
 }
