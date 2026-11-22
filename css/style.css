@@ -220,7 +220,8 @@ label {
 }
 
 input,
-textarea {
+textarea,
+select {
   width: 100%;
   max-width: 32rem;
   padding: 0.6rem 0.75rem;
@@ -232,7 +233,8 @@ textarea {
 }
 
 input:focus-visible,
-textarea:focus-visible {
+textarea:focus-visible,
+select:focus-visible {
   outline: 0.15rem solid var(--cor-destaque);
   border-color: var(--cor-destaque);
 }
@@ -490,4 +492,84 @@ a:focus-visible,
 button:focus-visible {
   outline: 0.15rem solid var(--cor-destaque);
   outline-offset: 0.15rem;
+}
+/* 17. Controles, botões de estado e mensagens (Aula 12) */
+.controles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr));
+  gap: var(--espaco);
+  align-items: end;
+  margin-bottom: var(--espaco);
+}
+
+.controles input,
+.controles select {
+  max-width: none;
+}
+
+/* Botões com estado: aria-pressed decide a aparência (o CSS lê o atributo). */
+.botao-alternar,
+.botao-item {
+  font: inherit;
+  font-weight: 600;
+  color: var(--cor-texto);
+  background-color: var(--cor-superficie);
+  border: var(--borda);
+  border-radius: var(--raio);
+  cursor: pointer;
+}
+
+.botao-alternar {
+  width: 100%;
+  padding: 0.6rem 1rem;
+}
+
+.botao-item {
+  font-size: 0.875rem;
+  padding: 0.35rem 0.75rem;
+}
+
+.botao-alternar:hover,
+.botao-item:hover {
+  border-color: var(--cor-destaque);
+}
+
+.botao-alternar[aria-pressed="true"],
+.botao-item[aria-pressed="true"] {
+  color: #000000;
+  background-color: var(--cor-destaque);
+  border-color: var(--cor-destaque);
+}
+
+.resumo:focus-visible {
+  outline: 0.15rem solid var(--cor-destaque);
+  outline-offset: 0.15rem;
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: var(--espaco);
+}
+
+.lista-projetos {
+  margin: var(--espaco) 0 var(--espaco);
+  padding: 0;
+  list-style-type: none;
+}
+
+.lista-projetos .projeto p {
+  margin: 0 0 0.25rem;
+}
+
+/* Mensagens de status: verde para sucesso, vermelho com .erro. */
+.mensagem {
+  min-height: 1.6em;
+  margin: 0.5rem 0 0;
+  color: var(--cor-faixa-rapido);
+}
+
+.mensagem.erro {
+  color: var(--cor-faixa-longo);
 }
