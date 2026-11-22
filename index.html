@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,7 @@
 
     <main>
           
-        <section class="card">
+        <section class="card" id="sobre">
             <h2>Sobre mim</h2>
             <p class="destaque">Olá, me chamo Lucas Moura!</p>
             <p>
@@ -71,7 +71,12 @@
                     <h3>Projeto Cassino Casa Blanca</h3>
                     <p>Python</p>
             </article>
+            <article class="projeto">
+               <h3>Gerenciador de Campeonato</h3>
+               <p>C</p>
+            </article>
     </div>
+    <div class="tabela-rolavel" role="region" aria-label="Tabela de resumo dos projetos" tabindex="0">
         <table>
         <caption>Resumo dos projetos</caption>
         <thead>
@@ -86,13 +91,15 @@
             <tr><td>Quadro 616</td><td>HTML, CSS, JS</td><td>25</td></tr>
             <tr><td>Quiz FLA</td><td>HTML, CSS, JS</td><td>18</td></tr>
             <tr><td>Cassino Casa Blanca</td><td>Python</td><td>12</td></tr>
+            <tr><td>Gerenciador de Campeonato</td><td>C</td><td>20</td></tr>
         </tbody>
     </table>
+    </div>
         </section>
 
         
-        <section class="card">
-            <h2>Aplicação mais recente: </h2>
+        <section class="card" id="video">
+            <h2>Aplicação mais recente</h2>
 
             <div class="video-container">
 
@@ -135,23 +142,24 @@
 
         <section class="card" id="contato">
             <h2>Contato</h2>
-            <form>
+            <form id="form-contato">
                 <fieldset>
                     <legend>Formulário de contato</legend>
 
                     <div>
                         <label for="nome">Nome</label>
-                        <input type="text" id="nome" name="nome" required minlength="3">
+                        <input type="text" id="nome" name="nome" required minlength="3" autocomplete="name">
                     </div>
 
                     <div>
                         <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required autocomplete="email">
                     </div>
 
                     <div>
-                        <label for="telefone">Telefone</label>
-                        <input type="tel" id="telefone" name="telefone" pattern="[0-9]{10,11}">
+                        <label for="telefone">Telefone (só números, com DDD)</label>
+                        <input type="tel" id="telefone" name="telefone" pattern="[0-9]{10,11}"
+                               title="Digite 10 ou 11 números, sem espaços nem traços" inputmode="tel" autocomplete="tel">
                     </div>
 
                     <div>
@@ -160,6 +168,7 @@
                     </div>
 
                     <button class="botao" type="submit">Enviar</button>
+                    <p class="mensagem" id="mensagem-contato" role="status"></p>
                 </fieldset>
             </form>
         </section>
