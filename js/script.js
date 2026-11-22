@@ -121,3 +121,90 @@ function iniciar() {
 
 testarSuporteVideo();
 iniciar();
+/* ---------- Navegação: menu hambúrguer, Escape e item ativo ---------- */
+
+const menuBotao = document.querySelector("#menu-botao");
+const menuLista = document.querySelector("#menu-principal");
+
+function menuEstaAberto() {
+  return menuBotao.getAttribute("aria-expanded") === "true";
+}
+
+function definirMenu(abrir) {
+  menuLista.classList.toggle("aberto", abrir);
+  menuBotao.setAttribute("aria-expanded", String(abrir));
+}
+
+function tratarCliqueMenuBotao() {
+  definirMenu(!menuEstaAberto());
+}
+
+// Escape fecha o menu e devolve o foco ao botão que o abriu.
+function tratarTeclaEscape(evento) {
+  if (evento.key === "Escape" && menuEstaAberto()) {
+    definirMenu(false);
+    menuBotao.focus();
+  }
+}
+
+// Escolher um link fecha o menu no celular.
+function tratarCliqueMenuLista(evento) {
+  if (evento.target.closest("a") !== null) {
+    definirMenu(false);
+  }
+}
+
+// Marca com .ativo o item do menu que corresponde à seção visível.
+function marcarItemAtivo(idSecao) {
+  for (const link of document.querySelectorAll(".navbar a")) {
+    link.classList.remove("ativo");
+    link.removeAttribute("aria-current");
+  }
+
+  for (const alvo of document.querySelectorAll(`.navbar a[href="#${idSecao}"]`)) {
+    const item = alvo.closest(".navbar > li");
+    const principal = item === null ? null : item.querySelector(":scope > a");
+
+    if (principal !== null) {
+      principal.classList.add("ativo");
+      principal.setAttribute("aria-current", "location");
+    }
+  }
+}
+
+function tratarSecoesVisiveis(entradas) {
+  for (const entrada of entradas) {
+    if (entrada.isIntersecting) {
+      marcarItemAtivo(entrada.target.id);
+    }
+  }
+}
+
+function iniciarDestaqueNavegacao() {
+  if (!("IntersectionObserver" in window)) {
+    return;
+  }
+
+  // A faixa central da tela é a "zona de leitura": a seção que entra nela vira a ativa.
+  const observador = new IntersectionObserver(tratarSecoesVisiveis, {
+    rootMargin: "-40% 0px -55% 0px",
+  });
+
+  for (const secao of document.querySelectorAll("main section")) {
+    observador.observe(secao);
+  }
+}
+
+function iniciarMenu() {
+  if (menuBotao === null || menuLista === null) {
+    console.error("Menu de navegação não encontrado no HTML.");
+    return;
+  }
+
+  menuBotao.addEventListener("click", tratarCliqueMenuBotao);
+  menuLista.addEventListener("click", tratarCliqueMenuLista);
+  document.addEventListener("keydown", tratarTeclaEscape);
+}
+
+iniciarMenu();
+iniciarDestaqueNavegacao();

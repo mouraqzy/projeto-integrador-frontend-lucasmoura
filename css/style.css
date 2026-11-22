@@ -26,6 +26,7 @@
    o que ajuda quem precisa de texto maior. Com px ficaria fixo. */
 html {
   font-size: 100%;
+  scroll-padding-top: 4.5rem;
 }
 
 body {
@@ -268,14 +269,29 @@ footer p {
   margin: 0;
   font-size: 0.875rem;
 }
-/* 13. Navbar (Flexbox) */
+/* 13. Navbar (Flexbox, sticky, dropdown e hambúrguer) */
+
+/* sticky: a barra acompanha a rolagem e fica sempre visível no topo. */
+.barra-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0.5rem calc(var(--espaco) * 2);
+  background-color: var(--cor-superficie-alta);
+  border-bottom: var(--borda);
+}
+
 .navbar {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
   gap: 0.75rem;
-  margin: var(--espaco) 0 0;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -290,7 +306,6 @@ footer p {
   border-radius: var(--raio);
 }
 
-
 .navbar a:hover,
 .navbar a:focus-visible {
   color: #000000;
@@ -300,6 +315,119 @@ footer p {
 .navbar a:focus-visible {
   outline: 0.15rem solid #ffffff;
   outline-offset: 0.15rem;
+}
+
+/* Estado .ativo: o JavaScript marca o item da seção que está na tela. */
+.navbar a.ativo {
+  background-color: var(--cor-violeta);
+  box-shadow: inset 0 -0.2rem 0 var(--cor-destaque);
+}
+
+.navbar a.ativo:hover,
+.navbar a.ativo:focus-visible {
+  box-shadow: none;
+}
+
+/* Dropdown: aparece com :hover (mouse) e :focus-within (teclado). */
+.tem-submenu {
+  position: relative;
+}
+
+.tem-submenu > a::after {
+  content: " ▾";
+  content: " ▾" / "";   /* texto alternativo vazio: o leitor de tela não lê o triângulo */
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 14rem;
+  margin: 0;
+  padding: 0.5rem;
+  list-style: none;
+  background-color: var(--cor-superficie-alta);
+  border: var(--borda);
+  border-radius: var(--raio);
+}
+
+.tem-submenu:hover > .submenu,
+.tem-submenu:focus-within > .submenu {
+  display: block;
+}
+
+/* Filho direto (>): só o último item do menu principal vira botão,
+   sem afetar o último item do dropdown. */
+.navbar > li:last-child > a {
+  border: 0.1rem solid var(--cor-destaque);  /* "Contato" vira botão */
+}
+
+/* Botão hambúrguer: três barras; só aparece em telas estreitas. */
+.menu-botao {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0.6rem;
+  background-color: transparent;
+  border: var(--borda);
+  border-radius: var(--raio);
+  cursor: pointer;
+}
+
+.menu-barra {
+  display: block;
+  height: 0.2rem;
+  background-color: #ffffff;
+  border-radius: 0.1rem;
+}
+
+.menu-botao[aria-expanded="true"] {
+  border-color: var(--cor-destaque);
+}
+
+.menu-botao[aria-expanded="true"] .menu-barra {
+  background-color: var(--cor-destaque);
+}
+
+@media (max-width: 40rem) {
+  .barra-nav {
+    padding: 0.5rem var(--espaco);
+  }
+
+  .menu-botao {
+    display: flex;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .navbar.aberto {
+    display: flex;
+  }
+
+  /* No celular não existe :hover: o submenu fica sempre aberto, recuado. */
+  .submenu {
+    display: block;
+    position: static;
+    min-width: 0;
+    margin-top: 0.25rem;
+    padding: 0 0 0 1rem;
+    background-color: transparent;
+    border: 0;
+  }
+
+  .tem-submenu > a::after {
+    content: "";
+  }
 }
 
 /* 14. Grade de projetos (Grid) */
@@ -342,9 +470,7 @@ footer p {
   background-color: var(--cor-superficie);   /* alterna o tom dos cards */
 }
 
-.navbar li:last-child a {
-  border: 0.1rem solid var(--cor-destaque);  /* "Contato" vira botão */
-}
+
 
 @media (prefers-reduced-motion: reduce) {
   .projeto {
@@ -359,4 +485,9 @@ footer p {
 
 .resumo {
   margin: var(--espaco) 0 0;
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 0.15rem solid var(--cor-destaque);
+  outline-offset: 0.15rem;
 }

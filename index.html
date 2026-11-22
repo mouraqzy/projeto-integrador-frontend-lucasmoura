@@ -12,14 +12,31 @@
     <header>
         <h1 id="titulo-principal">Portfólio Pessoal - Lucas Moura</h1>
         <p class="destaque">Site para apresentar minhas informações profissionais, projetos e formas de contato.</p>
-        <nav aria-label="Navegação principal">
-        <ul class="navbar">
-        <li><a href="#habilidades">Habilidades</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#contato">Contato</a></li>
-    </ul>
-</nav>
     </header>
+    
+        <nav class="barra-nav" aria-label="Navegação principal">
+        <!-- Botão hambúrguer: só aparece em telas estreitas. aria-expanded é atualizado pelo JavaScript. -->
+        <button type="button" class="menu-botao" id="menu-botao" aria-expanded="false"
+                aria-controls="menu-principal" aria-label="Menu de navegação">
+            <span class="menu-barra" aria-hidden="true"></span>
+            <span class="menu-barra" aria-hidden="true"></span>
+            <span class="menu-barra" aria-hidden="true"></span>
+        </button>
+
+        <ul class="navbar" id="menu-principal">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li class="tem-submenu">
+                <a href="#projetos">Projetos</a>
+                <ul class="submenu">
+                    <li><a href="#projetos">Lista e tabela</a></li>
+                    <li><a href="#video">Vídeo de apresentação</a></li>
+                    <li><a href="#resultado">Esforço estimado</a></li>
+                </ul>
+            </li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
 
     <main>
           
