@@ -171,6 +171,18 @@
             <p class="mensagem erro" id="aviso-filtros" role="status"></p>
 
             <p class="resumo destaque" id="resumo" aria-live="polite" tabindex="-1"></p>
+            
+            <figure class="grafico-figura">
+               
+                <!-- O conteúdo do SVG (título, descrição, barras e eixo) é montado pelo JavaScript.
+                     O viewBox faz o gráfico escalar junto com a largura da tela. -->
+                <svg class="grafico" id="grafico" viewBox="0 0 400 120" role="img"
+                     aria-labelledby="grafico-titulo grafico-desc">
+                    <title id="grafico-titulo">Horas dedicadas por projeto</title>
+                    <desc id="grafico-desc">O gráfico será carregado pelo JavaScript.</desc>
+                </svg>
+                <figcaption>Horas dedicadas por projeto. A cor da barra e o texto ao lado indicam o esforço estimado.</figcaption>
+            </figure>
 
             <p id="vazio" hidden>Nenhum projeto encontrado com os filtros atuais. Limpe a busca ou mude a categoria.</p>
 

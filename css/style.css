@@ -573,3 +573,50 @@ button:focus-visible {
 .mensagem.erro {
   color: var(--cor-faixa-longo);
 }
+/* 18. Gráfico em SVG: width 100% + viewBox = escala com a tela. */
+.grafico-figura {
+  margin: var(--espaco) 0;
+}
+
+.grafico {
+  display: block;
+  width: 100%;
+  max-width: 25rem;
+  height: auto;
+}
+
+.grafico-figura figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--cor-claro);
+}
+
+.grafico-rotulo {
+  font-size: 1rem;
+  fill: var(--cor-texto);
+}
+
+.grafico-valor {
+  font-size: 0.9rem;
+  font-weight: 700;
+  fill: var(--cor-claro);
+}
+
+.grafico-eixo-texto {
+  font-size: 0.8rem;
+  fill: var(--cor-claro);
+}
+
+.grafico-grade {
+  stroke: var(--cor-borda);
+  stroke-width: 1;
+}
+
+.grafico-eixo {
+  stroke: var(--cor-claro);
+  stroke-width: 1;
+}
+
+.barra.faixa-rapido { fill: var(--cor-faixa-rapido); }
+.barra.faixa-medio  { fill: var(--cor-faixa-medio); }
+.barra.faixa-longo  { fill: var(--cor-faixa-longo); }
