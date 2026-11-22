@@ -134,8 +134,75 @@
             </div>
         </section>
         
-        <section class="card" id="resultado" aria-live="polite">
+        <!-- Seção interativa (Aulas 9 a 12): tudo aqui dentro é desenhado pelo js/script.js
+             a partir de um único array de projetos. -->
+        <section class="card" id="resultado">
             <h2>Esforço estimado dos projetos</h2>
+            <p>
+                Filtre os projetos, marque favoritos, remova ou adicione novos. A lista
+                e o resumo se atualizam sozinhos a cada mudança.
+            </p>
+
+            <div class="controles">
+                <div>
+                    <label for="busca">Buscar por nome</label>
+                    <input type="search" id="busca" autocomplete="off">
+                </div>
+                <div>
+                    <label for="filtro-categoria">Categoria</label>
+                    <select id="filtro-categoria">
+                        <option value="todas">Todas</option>
+                        <option value="web">Web</option>
+                        <option value="python">Python</option>
+                        <option value="c">C</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="minimo-horas">Horas mínimas (0 a 100)</label>
+                    <input type="number" id="minimo-horas" min="0" max="100" inputmode="numeric">
+                </div>
+                <div class="controles-botao">
+                    <button type="button" class="botao-alternar" id="somente-favoritos" aria-pressed="false">
+                        Somente favoritos
+                    </button>
+                </div>
+            </div>
+
+            <p class="mensagem erro" id="aviso-filtros" role="status"></p>
+
+            <p class="resumo destaque" id="resumo" aria-live="polite" tabindex="-1"></p>
+
+            <p id="vazio" hidden>Nenhum projeto encontrado com os filtros atuais. Limpe a busca ou mude a categoria.</p>
+
+            <ul class="grade-projetos lista-projetos" id="lista-projetos"></ul>
+
+            <form id="form-novo-projeto">
+                <fieldset>
+                    <legend>Adicionar projeto</legend>
+
+                    <div>
+                        <label for="novo-nome">Nome do projeto</label>
+                        <input type="text" id="novo-nome" name="nome" required maxlength="40" autocomplete="off">
+                    </div>
+
+                    <div>
+                        <label for="novo-horas">Horas dedicadas (1 a 500)</label>
+                        <input type="number" id="novo-horas" name="horas" required min="1" max="500" step="1">
+                    </div>
+
+                    <div>
+                        <label for="novo-categoria">Categoria</label>
+                        <select id="novo-categoria" name="categoria">
+                            <option value="web">Web</option>
+                            <option value="python">Python</option>
+                            <option value="c">C</option>
+                        </select>
+                    </div>
+
+                    <button class="botao" type="submit">Adicionar projeto</button>
+                    <p class="mensagem" id="mensagem-novo" role="status"></p>
+                </fieldset>
+            </form>
         </section>
         
         <section class="card">
@@ -196,7 +263,7 @@
         <p>&copy; 2026 Lucas Moura. Todos os direitos reservados.</p>
     </footer>
         <script src="js/script.js" defer></script>
-        <script src="js/logica.js" defer></script>
+        
 
 </body>
 </html>
