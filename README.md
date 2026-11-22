@@ -16,7 +16,7 @@ CSS e JavaScript puros, o que aprendi na disciplina de Desenvolvimento Front-end
 
 | Desktop | Celular |
 |---|---|
-| ![Página do portfólio em desktop](assets/images/print-desktop.png) | ![Página do portfólio em celular](assets/images/print-celular.png) |
+| ![Página do portfólio em desktop](assets/images/print-desktop-v2.png) | ![Página do portfólio em celular](assets/images/print-celular-v2.png) |
 
 ## Estrutura de pastas
 
